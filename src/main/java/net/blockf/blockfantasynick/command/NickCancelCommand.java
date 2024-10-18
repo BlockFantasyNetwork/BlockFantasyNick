@@ -42,7 +42,7 @@ public class NickCancelCommand {
         }
         dbService.log().insertLog(bUser);
         MessageController.sendMessageToPlayer(player,"已将 "+player.getName()+" 昵称释放!");
-        player1.setDisplayName(player.getName());
+        player1.setDisplayName(player1.getName());
 
         if (player!=player1){
             MessageController.sendMessageToPlayer(player1,player.getName()+"已将您的昵称释放!");

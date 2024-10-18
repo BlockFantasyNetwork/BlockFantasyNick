@@ -39,8 +39,8 @@ public class NickOffCommand {
             return;
         }
         dbService.log().insertLog(bUser);
-        MessageController.sendMessageToPlayer(player,"已将 "+player.getName()+" 昵称显示&c关闭");
-        player1.setDisplayName(player.getName());
+        MessageController.sendMessageToPlayer(player,"已将 "+player1.getName()+" 昵称显示&c关闭");
+        player1.setDisplayName(player1.getName());
 
         if (player!=player1){
             MessageController.sendMessageToPlayer(player1,player.getName()+"已将您的昵称显示&c关闭");

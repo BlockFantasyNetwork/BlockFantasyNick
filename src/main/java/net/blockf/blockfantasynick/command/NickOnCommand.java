@@ -39,7 +39,7 @@ public class NickOnCommand {
             return;
         }
         dbService.log().insertLog(bUser);
-        MessageController.sendMessageToPlayer(player,"已将 "+player.getName()+" 昵称显示&a开启");
+        MessageController.sendMessageToPlayer(player,"已将 "+player1.getName()+" 昵称显示&a开启");
         player1.setDisplayName(bUser.getDisplay_name());
 
         if (player!=player1){
