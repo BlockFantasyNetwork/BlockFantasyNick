@@ -70,8 +70,8 @@ public class NickCommand {
         bUser.setDisplay_name_noc(nocNick);
         bUser.setStatus(1);
 
-        bUser.setUpdate_user(player1.getName());
-        bUser.setUpdate_user_uuid(player1.getUniqueId());
+        bUser.setUpdate_user(player.getName());
+        bUser.setUpdate_user_uuid(player.getUniqueId());
 
         if (dbService.user().updateUserNick(bUser)!=1){
             UUID errorId = UUID.randomUUID();

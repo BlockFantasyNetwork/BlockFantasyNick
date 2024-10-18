@@ -31,8 +31,8 @@ public class NickCancelCommand {
         bUser.setDisplay_name(bUser.getUser_name());
 
 
-        bUser.setUpdate_user(player1.getName());
-        bUser.setUpdate_user_uuid(player1.getUniqueId());
+        bUser.setUpdate_user(player.getName());
+        bUser.setUpdate_user_uuid(player.getUniqueId());
 
         if (dbService.user().updateUserNick(bUser)!=1){
             UUID errorId = UUID.randomUUID();

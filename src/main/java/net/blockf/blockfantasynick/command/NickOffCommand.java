@@ -29,8 +29,8 @@ public class NickOffCommand {
     void executeNickOff(@Context Player player, @Arg Player player1) {
         BUser bUser = dbService.user().getUserNick(player1);
         bUser.setStatus(0);
-        bUser.setUpdate_user(player1.getName());
-        bUser.setUpdate_user_uuid(player1.getUniqueId());
+        bUser.setUpdate_user(player.getName());
+        bUser.setUpdate_user_uuid(player.getUniqueId());
 
         if (dbService.user().updateUserNick(bUser)!=1){
             UUID errorId = UUID.randomUUID();
