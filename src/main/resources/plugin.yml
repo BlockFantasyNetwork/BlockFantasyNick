@@ -1,3 +1,4 @@
 name: BlockFantasyNick
 version: '${project.version}'
 main: net.blockf.blockfantasynick.BlockFantasyNick
+softdepend: ["PlaceholderAPI"]
