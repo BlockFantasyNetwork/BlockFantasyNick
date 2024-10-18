@@ -28,7 +28,7 @@ public class NickOnCommand {
     @Permission("bf.nick.other")
     void executeNickOn(@Context Player player, @Arg Player player1) {
         BUser bUser = dbService.user().getUserNick(player1);
-        bUser.setStatus(0);
+        bUser.setStatus(1);
         bUser.setUpdate_user(player.getName());
         bUser.setUpdate_user_uuid(player.getUniqueId());
 
