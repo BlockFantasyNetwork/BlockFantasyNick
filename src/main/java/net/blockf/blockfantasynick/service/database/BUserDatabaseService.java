@@ -40,14 +40,14 @@ public class BUserDatabaseService {
         }
     }
 
-    public BUser hasUser(Player player){
+    public BUser hasUser(String nickName){
         BUser bUser = new BUser();
         try {
             Connection connection = dataSource.getConnection();
             String sql = "select * from bf_nick_user where user_name = ?";
 
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, player.getName());
+            preparedStatement.setString(1, nickName);
             ResultSet rs = preparedStatement.executeQuery();
 
 
