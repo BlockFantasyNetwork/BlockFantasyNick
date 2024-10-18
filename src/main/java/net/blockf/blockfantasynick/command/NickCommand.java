@@ -65,6 +65,10 @@ public class NickCommand {
             MessageController.sendMessageToPlayer(player,"&c昵称 "+nocNick+" 已被使用,请使用其他昵称");
             return;
         }
+    if (dbService.user().hasUser(player1)!=null){
+        MessageController.sendMessageToPlayer(player,"&c你无法使用 "+nocNick+" 作为昵称,因为这是其他在本服玩家的ID");
+        return;
+    }
         BUser bUser = dbService.user().getUserNick(player1);
         bUser.setDisplay_name(nickName);
         bUser.setDisplay_name_noc(nocNick);

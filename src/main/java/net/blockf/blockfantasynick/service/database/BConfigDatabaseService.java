@@ -20,6 +20,7 @@ public class BConfigDatabaseService {
             ResultSet rs = preparedStatement.executeQuery();
 
             if(!rs.next()){
+                connection.close();
                 return null;
             }
             return rs.getString("value");

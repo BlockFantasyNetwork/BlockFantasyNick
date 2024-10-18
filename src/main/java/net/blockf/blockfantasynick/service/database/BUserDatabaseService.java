@@ -39,6 +39,43 @@ public class BUserDatabaseService {
             throw new RuntimeException(e);
         }
     }
+
+    public BUser hasUser(Player player){
+        BUser bUser = new BUser();
+        try {
+            Connection connection = dataSource.getConnection();
+            String sql = "select * from bf_nick_user where user_name = ?";
+
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, player.getName());
+            ResultSet rs = preparedStatement.executeQuery();
+
+
+
+            if(!rs.next()){
+                connection.close();
+                return null;
+            }
+
+
+
+            bUser.setUuid(UUID.fromString(rs.getString("uuid")));
+            bUser.setUser_name(rs.getString("user_name"));
+            bUser.setDisplay_name(rs.getString("display_name"));
+            bUser.setDisplay_name_noc(rs.getString("display_name_noc"));
+            bUser.setStatus(rs.getInt("status"));
+            bUser.setUpdate_user(rs.getString("update_user"));
+            bUser.setUpdate_user_uuid(UUID.fromString(rs.getString("update_user_uuid")));
+            bUser.setUpdate_time(rs.getTimestamp("update_time"));
+
+
+            connection.close();
+        }catch (Exception e){
+            throw new RuntimeException(e);
+        }
+
+        return bUser;
+    }
     public BUser getUserNick(Player player){
         BUser bUser = new BUser();
         try {
